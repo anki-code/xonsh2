@@ -176,7 +176,7 @@ class Execer(object):
             code = input
         else:
             if not input.endswith("\n"):
-                input += "\n"
+                input = str(input) + "\n"
             if filename is None:
                 filename = self.filename
             code = self.compile(

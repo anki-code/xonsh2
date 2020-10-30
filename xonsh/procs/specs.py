@@ -842,9 +842,14 @@ def run_subproc(cmds, captured=False, envs=None):
     if builtins.__xonsh__.env.get("XONSH_TRACE_SUBPROC"):
         print(f"TRACE SUBPROC: {cmds}", file=sys.stderr)
 
+    lines = False
+    if captured == 'lines':
+        lines = True
+        captured = 'stdout'
+
     specs = cmds_to_specs(cmds, captured=captured, envs=envs)
     captured = specs[-1].captured
-    if captured == "hiddenobject":
+    if captured == "hiddenobject" or captured is False:
         command = HiddenCommandPipeline(specs)
     else:
         command = CommandPipeline(specs)
@@ -874,7 +879,10 @@ def run_subproc(cmds, captured=False, envs=None):
     if background:
         return
     # now figure out what we should return.
-    if captured == "stdout":
+    if lines:
+        command.end()
+        return command.lines
+    elif captured == "stdout":
         command.end()
         return command.output
     elif captured == "object":
@@ -884,4 +892,4 @@ def run_subproc(cmds, captured=False, envs=None):
         return command
     else:
         command.end()
-        return
+        return command

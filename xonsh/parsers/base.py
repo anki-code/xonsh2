@@ -2926,7 +2926,7 @@ class BaseParser(object):
             )
         elif p1 == "$(":
             p0 = xonsh_call(
-                "__xonsh__.subproc_captured_stdout", p2, lineno=lineno, col=col
+                "__xonsh__.subproc_captured_object", p2, lineno=lineno, col=col
             )
         elif p1 == "!(":
             p0 = xonsh_call(
@@ -3125,12 +3125,12 @@ class BaseParser(object):
         """subproc_atom : dollar_lparen_tok subproc RPAREN"""
         p1 = p[1]
         p0 = xonsh_call(
-            "__xonsh__.subproc_captured_stdout",
+            "__xonsh__.subproc_captured_lines",
             args=p[2],
             lineno=p1.lineno,
             col=p1.lexpos,
         )
-        p0._cliarg_action = "append"
+        p0._cliarg_action = "extend"
         p[0] = p0
 
     def p_subproc_atom_captured_stdout_bang_empty(self, p):
