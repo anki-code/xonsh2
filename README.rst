@@ -1,3 +1,12 @@
+
+---------------------------------------------------------------------------------
+
+This repository was created to demonstrates `Xonsh Enrichment Proposal #2 <https://github.com/anki-code/xonsh-operators-proposal/blob/main/XEP-2.rst>`_.
+
+Feel free to create pull requests and issues. The main goal is to convert this repo to pull request to the original xonsh repo.
+
+---------------------------------------------------------------------------------
+
 xonsh
 =====
 
