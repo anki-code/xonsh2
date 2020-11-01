@@ -11,4 +11,4 @@ Install and try:
 Credits
 -------
 
-* This fork was created from git@github.com:anki-code/xonsh-xep-2.git using `my-xonsh-fork <https://github.com/anki-code/my-xonsh-fork>`_.
+* This fork was created from `git@github.com:anki-code/xonsh-xep-2.git` using `my-xonsh-fork <https://github.com/anki-code/my-xonsh-fork>`_.
