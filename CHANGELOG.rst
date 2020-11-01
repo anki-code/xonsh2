@@ -447,7 +447,7 @@ v0.9.18
 * Moved code from package xonsh.ptk2 to xonsh.ptk_shell (because it's the only one now); package xonsh.ptk2 redirects thence.
 * Added extremely simplified xonsh AppImage building process.
 * Added examples of usage $XONSH_TRACE_SUBPROC to the docs
-* Use UTF-8 encoding when writing .xonshrc with webconfig for Windows compatibility
+* Use UTF-8 encoding when writing .xonshrc_2 with webconfig for Windows compatibility
 
 **Deprecated:**
 
@@ -597,7 +597,7 @@ v0.9.14
 * New ``xonfig web`` command that launches a web UI (in your browser) that
   allows users to configure their ``$XONSH_COLOR_STYLE``, ``$PROMPT``, and
   loaded xontribs in an interactive way. This is the prefered way to initialize
-  the ``~/.xonshrc`` file on a new system or for new users.  It supersedes the
+  the ``~/.xonshrc_2`` file on a new system or for new users.  It supersedes the
   old ``xonfig wizard`` command.
 * New ``xonsh.webconfig`` subpackage for creating and launching ``xonfig web``.
 * Added ``localtime`` entry to the ``$PROMPT_FIELDS`` dictionary, allowing users
@@ -1439,7 +1439,7 @@ v0.8.5
 
             python3 -m pip install xontrib-base16-shell
 
-    2. Add on ``~/.xonshrc``
+    2. Add on ``~/.xonshrc_2``
 
        .. code:: xonsh
             :number-lines:
@@ -2336,7 +2336,7 @@ v0.6.1
 * Updated CircleCI to use circle version 2.0
 * Replaced StopIteration with return in CommandPipeline.iterraw.
 * Xonsh run control now also looks for the XDG-compliant file
-  ``~/.config/xonsh/rc.xsh`` at startup.
+  ``~/.config/xonsh/rc_2.xsh`` at startup.
 
 
 **Fixed:**
@@ -3899,11 +3899,11 @@ v0.3.3
 * Fixed crashed bash-completer when bash is not available on Windows
 * Fixed bug on Windows where tab-completion for executables would return all files.
 * Fixed bug on Windows which caused the bash $PROMPT variable to be used when no
-  no $PROMPT variable was set in .xonshrc
+  no $PROMPT variable was set in .xonshrc_2
 * Improved start-up times by caching information about bash completion
   functions
 * The --shell-type CLI flag now takes precedence over $SHELL_TYPE specified in
-  .xonshrc
+  .xonshrc_2
 * Fixed an issue about ``os.killpg()`` on OS X which caused xonsh crash with
   occasionally.
 

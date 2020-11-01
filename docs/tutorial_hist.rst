@@ -390,7 +390,7 @@ Xonsh is able to capture all stdout and stderr transparently and responsively. F
 Python code, or xonsh code, this isn't a big deal. It is easy to redirect information
 flowing through ``sys.stdout`` and ``sys.stderr``.  For subprocess commands, this is
 considerably harder. Storing stdout is disabled by default, but can be enabled by setting:
-``$XONSH_STORE_STDOUT=True`` in your ``~/.xonshrc`` file.
+``$XONSH_STORE_STDOUT=True`` in your ``~/.xonshrc_2`` file.
 
 To be able to tee stdout and stderr and still have the terminal responsive, xonsh implements
 its own teeing pseudo-terminal on top of the Python standard library ``pty`` module. You
@@ -416,7 +416,7 @@ Note that this does not affect startup time, but the amount of time before
 all history is available for searching.
 
 To use sqlite history backend, set ``$XONSH_HISTORY_BACKEND = 'sqlite'`` in
-your ``~/.xonshrc`` file. To switch back to JSON version, remove this line,
+your ``~/.xonshrc_2`` file. To switch back to JSON version, remove this line,
 or set it to ``'json'``.
 
 .. note:: SQLite history backend currently only supports ``commands`` as

@@ -61,7 +61,7 @@ Registering custom styles
 
 If you aren't happy with the styles provided by us (and ``pygments``), you can create and register custom styles.
 
-To do so, add something similar to your ``.xonshrc``:
+To do so, add something similar to your ``.xonshrc_2``:
 
 .. code-block:: python
 
@@ -204,7 +204,7 @@ The problem might be:
 - Your locale is not set to utf-8, to check this you can set the content of the
   environment variable ``LC_TYPE``
 - Your locale is correctly set but **after** xonsh started. This is typically
-  the case if you set your ``LC_TYPE`` inside your ``.xonshrc`` and xonsh is
+  the case if you set your ``LC_TYPE`` inside your ``.xonshrc_2`` and xonsh is
   your default/login shell. To fix this you should see the documentation of your
   operating system to know how to correctly setup environment variables before
   the shell start (``~/.pam_environment`` for example)

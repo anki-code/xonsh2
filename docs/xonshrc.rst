@@ -13,7 +13,7 @@ The system-wide ``xonshrc`` file controls options that are applied to all users 
 You can create this file in ``/etc/xonshrc`` for Linux and OSX and in ``%ALLUSERSPROFILE%\xonsh\xonshrc`` on Windows.
 
 Xonsh also allows a per-user run control file in your home directory, either
-directly in the home directory at ``~/.xonshrc`` or, for XDG compliance, at ``~/.config/rc.xsh``. 
+directly in the home directory at ``~/.xonshrc_2`` or, for XDG compliance, at ``~/.config/rc_2.xsh``. 
 The options set per user override settings in the system-wide control file.
 
 Xonsh provides 2 wizards to create your own "xonshrc".  ``xonfig web`` provides basic settings, and ``xonfig wizard``
@@ -23,7 +23,7 @@ xonfig web
 -----------
 
 This helps you choose a color theme, customized prompt and add-in packages ("xontribs").  It 
-initializes your personal run control file (usually at ``~/.xonshrc``).  To invoke it (from a xonsh prompt):
+initializes your personal run control file (usually at ``~/.xonshrc_2``).  To invoke it (from a xonsh prompt):
 
 .. code-block:: xonshcon
   
@@ -44,7 +44,7 @@ The page has:
   but can affect any aspect of Xonsh behavior.  
   Choose one or more to suit your needs but note that they will require installation of additional
   packages.  You can extend Xonsh by `writing your own xontrib <tutorial_xontrib.html>`_, and are invited/urged to do so!
-:Save: Click to write the configuration choices to your ``~/.xonshrc``. This will add a few tagged lines to your run control file, but will not 
+:Save: Click to write the configuration choices to your ``~/.xonshrc_2``. This will add a few tagged lines to your run control file, but will not 
   overwrite it completely, so you can run `xonfig web` at any time.
 
 xonfig wizard
@@ -156,9 +156,9 @@ Real world sample xonshrc
 
 The following is a real-world example of such a file.
 
-:download:`Download xonshrc <xonshrc.xsh>`
+:download:`Download xonshrc <xonshrc_2.xsh>`
 
-.. include:: xonshrc.xsh
+.. include:: xonshrc_2.xsh
     :code: xonsh
 
 

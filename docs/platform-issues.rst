@@ -224,7 +224,7 @@ works by hooking the prompt to reset the current working directory to the root
 drive folder whenever the shell is idle. It only works with the prompt-toolkit
 back-end. To enable that behaviour run the following: 
 
-Add this line to your ``~/.xonshrc`` file to have it always enabled. 
+Add this line to your ``~/.xonshrc_2`` file to have it always enabled. 
 
 .. code-block:: xonshcon
 
@@ -260,7 +260,7 @@ typing and avoid the ambiguity altogether:
 
    >>> aliases['d'] = ['cmd', '/c', 'dir']
 
-You can add aliases to your ``~/.xonshrc`` to have it always
+You can add aliases to your ``~/.xonshrc_2`` to have it always
 available when xonsh starts.
 
 

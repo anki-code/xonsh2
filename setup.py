@@ -16,13 +16,13 @@ from setuptools.command.build_py import build_py
 from setuptools.command.install_scripts import install_scripts
 
 TABLES = [
-    "xonsh/lexer_table.py",
-    "xonsh/parser_table.py",
-    "xonsh/__amalgam__.py",
-    "xonsh/completers/__amalgam__.py",
-    "xonsh/history/__amalgam__.py",
-    "xonsh/prompt/__amalgam__.py",
-    "xonsh/procs/__amalgam__.py",
+    "xonsh2/lexer_table.py",
+    "xonsh2/parser_table.py",
+    "xonsh2/__amalgam__.py",
+    "xonsh2/completers/__amalgam__.py",
+    "xonsh2/history/__amalgam__.py",
+    "xonsh2/prompt/__amalgam__.py",
+    "xonsh2/procs/__amalgam__.py",
 ]
 
 
@@ -35,7 +35,7 @@ def clean_tables():
 
 
 os.environ["XONSH_DEBUG"] = "1"
-from xonsh import __version__ as XONSH_VERSION
+from xonsh2 import __version__ as XONSH_VERSION
 
 
 def amalgamate_source():
@@ -50,11 +50,11 @@ def amalgamate_source():
         [
             "amalgamate",
             "--debug=XONSH_DEBUG",
-            "xonsh",
-            "xonsh.completers",
-            "xonsh.history",
-            "xonsh.prompt",
-            "xonsh.procs",
+            "xonsh2",
+            "xonsh2.completers",
+            "xonsh2.history",
+            "xonsh2.prompt",
+            "xonsh2.procs",
         ]
     )
     sys.path.pop(0)
@@ -64,12 +64,12 @@ def build_tables():
     """Build the lexer/parser modules."""
     print("Building lexer and parser tables.")
     sys.path.insert(0, os.path.dirname(__file__))
-    from xonsh.parser import Parser
+    from xonsh2.parser import Parser
 
     Parser(
         lexer_table="lexer_table",
         yacc_table="parser_table",
-        outputdir="xonsh",
+        outputdir="xonsh2",
         yacc_debug=True,
     )
     sys.path.pop(0)
@@ -104,7 +104,7 @@ def dirty_version():
     except:
         _date = ""
         print("failed to get commit date", file=sys.stderr)
-    with open("xonsh/dev.githash", "w") as f:
+    with open("xonsh2/dev.githash", "w") as f:
         f.write("{}|{}".format(sha, _date))
     print("wrote git version: " + sha, file=sys.stderr)
     return True
@@ -116,7 +116,7 @@ ORIGINAL_VERSION_LINE = None
 def replace_version(N):
     """Replace version in `__init__.py` with devN suffix"""
     global ORIGINAL_VERSION_LINE
-    with open("xonsh/__init__.py", "r") as f:
+    with open("xonsh2/__init__.py", "r") as f:
         raw = f.read()
     lines = raw.splitlines()
     msg_assert = "__version__ must be the first line of the __init__.py"
@@ -124,7 +124,7 @@ def replace_version(N):
     ORIGINAL_VERSION_LINE = lines[0]
     lines[0] = lines[0].rstrip(' "') + '.dev{}"'.format(N)
     upd = "\n".join(lines) + "\n"
-    with open("xonsh/__init__.py", "w") as f:
+    with open("xonsh2/__init__.py", "w") as f:
         f.write(upd)
 
 
@@ -132,12 +132,12 @@ def restore_version():
     """If we touch the version in __init__.py discard changes after install."""
     if ORIGINAL_VERSION_LINE is None:
         return
-    with open("xonsh/__init__.py", "r") as f:
+    with open("xonsh2/__init__.py", "r") as f:
         raw = f.read()
     lines = raw.splitlines()
     lines[0] = ORIGINAL_VERSION_LINE
     upd = "\n".join(lines) + "\n"
-    with open("xonsh/__init__.py", "w") as f:
+    with open("xonsh2/__init__.py", "w") as f:
         f.write(upd)
 
 
@@ -276,7 +276,7 @@ def main():
         readme = f.read()
     scripts = ["scripts/xon.sh"]
     skw = dict(
-        name="xonsh",
+        name="xonsh2",
         description="Python-powered, cross-platform, Unix-gazing shell",
         long_description=readme,
         license="BSD",
@@ -288,32 +288,32 @@ def main():
         platforms="Cross Platform",
         classifiers=["Programming Language :: Python :: 3"],
         packages=[
-            "xonsh",
-            "xonsh.ply.ply",
-            "xonsh.ptk_shell",
-            "xonsh.ptk2",
-            "xonsh.procs",
-            "xonsh.parsers",
-            "xonsh.xoreutils",
-            "xontrib",
-            "xonsh.completers",
-            "xonsh.history",
-            "xonsh.prompt",
-            "xonsh.lib",
-            "xonsh.webconfig",
+            "xonsh2",
+            "xonsh2.ply.ply",
+            "xonsh2.ptk_shell",
+            "xonsh2.ptk2",
+            "xonsh2.procs",
+            "xonsh2.parsers",
+            "xonsh2.xoreutils",
+            "xontrib2",
+            "xonsh2.completers",
+            "xonsh2.history",
+            "xonsh2.prompt",
+            "xonsh2.lib",
+            "xonsh2.webconfig",
         ],
         package_dir={
-            "xonsh": "xonsh",
-            "xontrib": "xontrib",
-            "xonsh.lib": "xonsh/lib",
-            "xonsh.webconfig": "xonsh/webconfig",
+            "xonsh2": "xonsh2",
+            "xontrib2": "xontrib2",
+            "xonsh2.lib": "xonsh2/lib",
+            "xonsh2.webconfig": "xonsh2/webconfig",
         },
         package_data={
-            "xonsh": ["*.json", "*.githash"],
-            "xonsh.vended_ptk": ["LICENSE-prompt-toolkit", "LICENSE-wcwidth"],
-            "xontrib": ["*.xsh"],
-            "xonsh.lib": ["*.xsh"],
-            "xonsh.webconfig": [
+            "xonsh2": ["*.json", "*.githash"],
+            "xonsh2.vended_ptk": ["LICENSE-prompt-toolkit", "LICENSE-wcwidth"],
+            "xontrib2": ["*.xsh"],
+            "xonsh2.lib": ["*.xsh"],
+            "xonsh2.webconfig": [
                 "*.html",
                 "js/app.min.js",
                 "js/bootstrap.min.css",
@@ -324,20 +324,20 @@ def main():
         scripts=scripts,
     )
     skw["packages"].extend(
-        ["xonsh.vended_ptk." + pkg for pkg in find_packages(where="xonsh/vended_ptk")]
+        ["xonsh2.vended_ptk." + pkg for pkg in find_packages(where="xonsh2/vended_ptk")]
     )
     # We used to avoid setuptools 'console_scripts' due to startup performance
     # concerns which have since been resolved, so long as install is done
     # via `pip install .` and not `python setup.py install`.
     skw["entry_points"] = {
         "pygments.lexers": [
-            "xonsh = xonsh.pyghooks:XonshLexer",
-            "xonshcon = xonsh.pyghooks:XonshConsoleLexer",
+            "xonsh2 = xonsh2.pyghooks:XonshLexer",
+            "xonshcon = xonsh2.pyghooks:XonshConsoleLexer",
         ],
-        "pytest11": ["xonsh = xonsh.pytest_plugin"],
+        "pytest11": ["xonsh2 = xonsh2.pytest_plugin"],
         "console_scripts": [
-            "xonsh = xonsh.main:main",
-            "xonsh-cat = xonsh.xoreutils.cat:cat_main",
+            "xonsh2 = xonsh2.main:main",
+            "xonsh-cat = xonsh2.xoreutils.cat:cat_main",
         ],
     }
     skw["cmdclass"]["develop"] = xdevelop

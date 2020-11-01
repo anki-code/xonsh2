@@ -1,3 +1,11 @@
+xonsh2
+------
+This fork was created from git@github.com:anki-code/xonsh-xep-2.git using `my-xonsh-fork <https://github.com/anki-code/my-xonsh-fork>`_.
+
+
+---------------------------------------------------------------
+
+
 xonsh-xep-2
 ===========
 
@@ -12,3 +20,9 @@ Install and try:
 
 
 Feel free to create pull requests and issues. The main goal is to convert this repo to pull request to the original xonsh repo.
+
+
+Credits
+-------
+
+* This fork was created from git@github.com:anki-code/xonsh-xep-2.git using `my-xonsh-fork <https://github.com/anki-code/my-xonsh-fork>`_.

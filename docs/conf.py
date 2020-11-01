@@ -378,7 +378,7 @@ def make_xontribs():
             usage = (
                 "**Usage:**\n\n"
                 "Run the following command to enable (or add "
-                "it to your :doc:`.xonshrc </xonshrc>` file to enable "
+                "it to your :doc:`.xonshrc_2 </xonshrc>` file to enable "
                 "on startup.)\n\n"
                 ".. code-block:: xonsh\n\n"
             )

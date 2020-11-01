@@ -136,6 +136,6 @@ Now that the condition is defined, we can pass it as a ``filter`` keyword to a k
         ls -l
         event.cli.renderer.erase()
 
-With both of those in your ``.xonshrc``, pressing ``Control L`` will list the
+With both of those in your ``.xonshrc_2``, pressing ``Control L`` will list the
 contents of your current directory if there are fewer than 10 items in it.
 Useful? Debatable. Powerful? Yes.
