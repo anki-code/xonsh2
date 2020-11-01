@@ -1,6 +1,9 @@
 xonsh2
 ------
 
+.. image:: https://repository-images.githubusercontent.com/309102477/193fca00-1c7e-11eb-95c5-12b2986fedfb
+
+
 The `xonsh2 <https://github.com/anki-code/xonsh2>`_ repository was built by `my-xonsh-fork <https://github.com/anki-code/my-xonsh-fork>`_
 from `xonsh-xep-2 <https://github.com/anki-code/xonsh-xep-2>`_ repository that has `XEP-2 <https://github.com/anki-code/xonsh-operators-proposal/blob/main/XEP-2.rst>`_ changes. 
 
